@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marksheet - Generator</title>
 </head>
+<!-- bootstrap css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <!-- main style css -->
 <link rel="stylesheet" href="./style/index.css">
 
@@ -19,27 +22,96 @@
             <div class="marksheet">
                 <div class="caption">
                     <div class="logo"><img src="/assets/image/logo.png" width="170" alt="image"></div>
-                    <div class="title">Marksheet Report <br> <span class="cdn">Codenetic Center</span> </div>
+                    <div class="title">
+                        <h1>Marksheet Report</h1> <span class="cdn">Codenetic Center</span>
+                    </div>
                 </div>
                 <!-- Rendor Student info -->
                 <div class="contain_render_data">
                     <div class="flex-wrap">
-                        <div class="student_name">Name: <span id="getName">RandomName</span> </div>
-                        <div class="student_fName">Father Name: <span id="getfName">RandomName</span> </div>
-                        <div class="student_surname">surname: <span id="surName">RandomName</span> </div>
+                        <div class="student_name flex-row">
+                            <h3>Name:</h3> <span id="getName">RandomName</span>
+                        </div>
+                        <div class="student_fName flex-row">
+                            <h3>Father Name:</h3><span id="getfName">RandomName</span>
+                        </div>
+                        <div class="student_surname">
+                            <h3>Surname:</h3> <span id="surName">RandomName</span>
+                        </div>
                     </div>
                     <div class="flex-wrap">
-                        <div class="student_group">Group: <span id="Group">science</span> </div>
-                        <div class="student_seatnum">Seat No: <span id="seatNum">9802</span> </div>
+                        <div class="student_group">
+                            <h3>Group:</h3> <span id="Group">science</span>
+                        </div>
+                        <div class="student_seatnum">
+                            <h3>Seat No:</h3> <span id="seatNum">9802</span>
+                        </div>
                     </div>
+                </div>
+                <!-- Table form -->
+                <div class="mainTab">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Obtent Marks</th>
+                            <th>Total Marks</th>
+                            <th>Min Marks</th>
+                            <th>Percentage</th>
+                        </tr>
+                        <tr>
+                            <td>English</td>
+                            <td>70</td>
+                            <td>100</td>
+                            <td>30</td>
+                            <td>32.2%</td>
+                        </tr>
+                        <tr>
+                            <td>Physics</td>
+                            <td>75</td>
+                            <td>100</td>
+                            <td>30</td>
+                            <td>50.5%</td>
+                        </tr>
+                        <tr>
+                            <td>Chemistry</td>
+                            <td>69</td>
+                            <td>100</td>
+                            <td>30</td>
+                            <td>63.6%</td>
+                        </tr>
+                        <tr>
+                            <td>Math</td>
+                            <td>67</td>
+                            <td>100</td>
+                            <td>30</td>
+                            <td>51.2%</td>
+                        </tr>
+                        <tr>
+                            <td>Urdu</td>
+                            <td>67</td>
+                            <td>100</td>
+                            <td>30</td>
+                            <td>43.2%</td>
+                        </tr>
+                    </tbody>
+                </table>
                 </div>
             </div>
         </div>
     </div>
-    <h1>Hello World</h1>
-    <h1>Hello</h1>
+    <!-- <h1>Hello World</h1>
+    <h1>Hello</h1> -->
     <!-- main js -->
     <script src="/js/index.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

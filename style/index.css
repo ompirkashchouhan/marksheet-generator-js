@@ -1,4 +1,10 @@
+* {
+    font-family: math;
+}
+
 /* marksheet styles */
+/* flex row */
+
 .marksheet {
     display: flex;
     flex-direction: column;
@@ -6,6 +12,7 @@
     align-content: stretch;
     justify-content: space-evenly;
     align-items: stretch;
+    padding: 17px;
 }
 
 .caption {
@@ -15,7 +22,107 @@
     align-content: center;
     align-items: center;
     background: #DBEBF8;
-    gap: 7pc;
+    gap: 3.5pc;
     padding: 14px;
-    padding-left: 6pc;
+}
+
+.title h1 {
+
+    color: #1069a7;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.contain_render_data {
+    color: #5597AF;
+    margin-top: 2pc;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.student_name,
+.student_fName,
+.student_surname {
+    margin-bottom: 8px;
+    font-weight: 800;
+    font-family: math;
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 2pc;
+}
+
+#getName,
+#getfName,
+#surName,
+#seatNum,
+#Group {
+    border-bottom: 1px solid;
+    border-bottom-width: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-size: 16px !important;
+    display: inline !important;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.student_group,
+.student_seatnum {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    gap: 23px;
+}
+
+.cdn {
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #649BBA;
+}
+
+th {
+    background: #649BBA;
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    border-color: #1069a7;
+}
+
+td {
+    color: #649bba;
+    text-align: center;
+}
+
+.mainTab {
+    padding: 22px 4pc;
 }
