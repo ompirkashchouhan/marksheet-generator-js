@@ -1,0 +1,21 @@
+/* marksheet styles */
+.marksheet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.caption {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    background: #DBEBF8;
+    gap: 7pc;
+    padding: 14px;
+    padding-left: 6pc;
+}
