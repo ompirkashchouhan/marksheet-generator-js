@@ -1,9 +1,6 @@
 
 // >>>>>>>>>>>>>>>>>>>>>>... start Marksheet
-
 // select parent Div
-var parentDiv = document.getElementById('container');
-
 // Create the marksheet container
 var marksheet = document.createElement('div');
 marksheet.className = 'marksheet';
@@ -41,9 +38,11 @@ marksheet.appendChild(caption);
 var containRenderData = document.createElement('div');
 containRenderData.className = 'contain_render_data';
 
+// First Row (Name, Father Name, Surname)
 var flexWrap1 = document.createElement('div');
 flexWrap1.className = 'flex-wrap';
 
+// Name
 var studentName = document.createElement('div');
 studentName.className = 'student_name flex-row';
 var studentNameH3 = document.createElement('h3');
@@ -54,6 +53,7 @@ getNameSpan.innerText = 'RandomName';
 studentName.appendChild(studentNameH3);
 studentName.appendChild(getNameSpan);
 
+// Father Name
 var studentFName = document.createElement('div');
 studentFName.className = 'student_fName flex-row';
 var studentFNameH3 = document.createElement('h3');
@@ -64,6 +64,7 @@ getfNameSpan.innerText = 'RandomName';
 studentFName.appendChild(studentFNameH3);
 studentFName.appendChild(getfNameSpan);
 
+// Surname
 var studentSurname = document.createElement('div');
 studentSurname.className = 'student_surname';
 var studentSurnameH3 = document.createElement('h3');
@@ -74,13 +75,16 @@ surNameSpan.innerText = 'RandomName';
 studentSurname.appendChild(studentSurnameH3);
 studentSurname.appendChild(surNameSpan);
 
+// Append all rows
 flexWrap1.appendChild(studentName);
 flexWrap1.appendChild(studentFName);
 flexWrap1.appendChild(studentSurname);
 
+// Second Row (Group, Seat No)
 var flexWrap2 = document.createElement('div');
 flexWrap2.className = 'flex-wrap';
 
+// Group
 var studentGroup = document.createElement('div');
 studentGroup.className = 'student_group';
 var studentGroupH3 = document.createElement('h3');
@@ -91,6 +95,7 @@ groupSpan.innerText = 'science';
 studentGroup.appendChild(studentGroupH3);
 studentGroup.appendChild(groupSpan);
 
+// Seat No
 var studentSeatNum = document.createElement('div');
 studentSeatNum.className = 'student_seatnum';
 var studentSeatNumH3 = document.createElement('h3');
@@ -101,9 +106,11 @@ seatNumSpan.innerText = '9802';
 studentSeatNum.appendChild(studentSeatNumH3);
 studentSeatNum.appendChild(seatNumSpan);
 
+// Append all rows
 flexWrap2.appendChild(studentGroup);
 flexWrap2.appendChild(studentSeatNum);
 
+// Add to the render container
 containRenderData.appendChild(flexWrap1);
 containRenderData.appendChild(flexWrap2);
 marksheet.appendChild(containRenderData);
@@ -114,15 +121,30 @@ mainTab.className = 'mainTab';
 var table = document.createElement('table');
 var tbody = document.createElement('tbody');
 
-var headerRow = document.createElement('tr');
-var headers = ['Subject', 'Obtent Marks', 'Total Marks', 'Min Marks', 'Percentage'];
+// Create Table Header
+var headerRow1 = document.createElement('tr');
+var headerRowTh = document.createElement('th');
+headerRowTh.innerHTML = 'Subject'
+var headerRow2 = document.createElement('tr');
+var headerRowTh1 = document.createElement('th');
+headerRowTh1.innerHTML = 'Obtend Marks'
+var headerRow3 = document.createElement('tr');
+var headerRowTh2 = document.createElement('th');
+headerRowTh2.innerHTML = 'Total Marks'
+var headerRow4 = document.createElement('tr');
+var headerRowTh3 = document.createElement('th');
+headerRowTh3.innerHTML = 'Min Marks'
+var headerRow5 = document.createElement('tr');
+var headerRowTh4 = document.createElement('th');
+headerRowTh4.innerHTML = 'Percentage'
 
-headers.forEach(headerText => {
-    var th = document.createElement('th');
-    th.innerText = headerText;
-    headerRow.appendChild(th);
-});
-tbody.appendChild(headerRow);
+// table header appenchild tbody
+headerRow1.appendChild(headerRowTh);
+headerRow1.appendChild(headerRowTh1);
+headerRow1.appendChild(headerRowTh2);
+headerRow1.appendChild(headerRowTh3);
+headerRow1.appendChild(headerRowTh4);
+tbody.appendChild(headerRow1)
 
 // Example subjects data (can be fetched or dynamically populated)
 var subjects = [
@@ -133,39 +155,41 @@ var subjects = [
     { name: 'Urdu', obtentMarks: 67, totalMarks: 100, minMarks: 30, percentage: '43.2%' },
     { name: 'Computer Science', obtentMarks: 83, totalMarks: 100, minMarks: 30, percentage: '70.2%' },
     { name: 'Biology', obtentMarks: 86, totalMarks: 100, minMarks: 30, percentage: '81.2%' },
-    { name: 'Total', obtentMarks: 517, totalMarks: 800, minMarks: 210, percentage: '94.2%', isTotal: true }
+    { name: 'Total', obtentMarks: 517, totalMarks: 800, minMarks: 210, percentage: '94.2%' }
 ];
 
-// Render the subject rows
-subjects.forEach(subject => {
+// Render the subject rows using a for loop
+for (var i = 0; i < subjects.length; i++) {
     var tr = document.createElement('tr');
+
+    // Subject name
     var tdName = document.createElement('td');
-    tdName.innerText = subject.name;
-    if (subject.isTotal) tdName.className = 'same';
-
-    var tdObtent = document.createElement('td');
-    tdObtent.innerText = subject.obtentMarks;
-    if (subject.isTotal) tdObtent.className = 'same';
-
-    var tdTotal = document.createElement('td');
-    tdTotal.innerText = subject.totalMarks;
-    if (subject.isTotal) tdTotal.className = 'same';
-
-    var tdMin = document.createElement('td');
-    tdMin.innerText = subject.minMarks;
-    if (subject.isTotal) tdMin.className = 'same';
-
-    var tdPercentage = document.createElement('td');
-    tdPercentage.innerText = subject.percentage;
-    if (subject.isTotal) tdPercentage.className = 'same';
-
+    tdName.innerText = subjects[i].name;
     tr.appendChild(tdName);
+
+    // Obtent Marks
+    var tdObtent = document.createElement('td');
+    tdObtent.innerText = subjects[i].obtentMarks;
     tr.appendChild(tdObtent);
+
+    // Total Marks
+    var tdTotal = document.createElement('td');
+    tdTotal.innerText = subjects[i].totalMarks;
     tr.appendChild(tdTotal);
+
+    // Min Marks
+    var tdMin = document.createElement('td');
+    tdMin.innerText = subjects[i].minMarks;
     tr.appendChild(tdMin);
+
+    // Percentage
+    var tdPercentage = document.createElement('td');
+    tdPercentage.innerText = subjects[i].percentage;
     tr.appendChild(tdPercentage);
+
+    // Add the row to the table body
     tbody.appendChild(tr);
-});
+}
 
 table.appendChild(tbody);
 mainTab.appendChild(table);
@@ -175,26 +199,30 @@ marksheet.appendChild(mainTab);
 var gradingDiv = document.createElement('div');
 gradingDiv.className = 'grading';
 
+// Grading Scale Text
 var captionGradeText = document.createElement('div');
 captionGradeText.className = 'caption_grade_text';
 var gradingScaleH3 = document.createElement('h3');
 gradingScaleH3.innerText = 'Grading Scale: A = 90% to 100% B = 80%-89% C = 60%-79% D = 0%-59%';
 captionGradeText.appendChild(gradingScaleH3);
 
+// Your Grade
 var yourGradeDiv = document.createElement('div');
 yourGradeDiv.className = 'you_grade';
 var gradeH2 = document.createElement('h2');
 gradeH2.innerText = 'Grade:';
 var gradeSpan = document.createElement('span');
 gradeSpan.id = 'grade';
-gradeSpan.innerText = 'A';
+gradeSpan.innerText = '</>';
 yourGradeDiv.appendChild(gradeH2);
 yourGradeDiv.appendChild(gradeSpan);
 
+// Add grading sections to the container
 gradingDiv.appendChild(captionGradeText);
 gradingDiv.appendChild(yourGradeDiv);
 marksheet.appendChild(gradingDiv);
 
 // Append the whole marksheet to the document body or a specific container
-parentDiv.appendChild(marksheet);
+document.body.appendChild(marksheet);
+
 // >>>>>>>>>>>>>>>>>>>>>>... end Marksheet

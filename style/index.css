@@ -4,7 +4,13 @@
 }
 
 /* marksheet styles */
-/* flex row */
+.heading {
+    color: white;
+    text-shadow: 0px 0px 3px rgba(128, 0, 128, 0.552);
+    background-color: #1068a7;
+    padding: 10px;
+    top: 0;
+}
 
 .marksheet {
     display: flex;
