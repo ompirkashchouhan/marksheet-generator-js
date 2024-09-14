@@ -1,5 +1,6 @@
 * {
     font-family: math;
+    cursor: default;
 }
 
 /* marksheet styles */
@@ -12,7 +13,8 @@
     align-content: stretch;
     justify-content: space-evenly;
     align-items: stretch;
-    padding: 17px;
+    margin: 25px;
+    border: 1px solid grey;
 }
 
 .caption {
@@ -22,7 +24,7 @@
     align-content: center;
     align-items: center;
     background: #DBEBF8;
-    gap: 3.5pc;
+    gap: 3.1pc;
     padding: 14px;
 }
 
@@ -107,11 +109,12 @@ table {
 
 th,
 td {
-    border: 1px solid #649BBA;
+    border: 1px solid #1068a7;
 }
 
 th {
-    background: #649BBA;
+    background: #1068a7;
+    padding: 5px 12px;
     color: white;
     font-size: 17px;
     text-align: center;
@@ -125,4 +128,192 @@ td {
 
 .mainTab {
     padding: 22px 4pc;
+}
+
+.same {
+    background-color: #1068a7;
+    color: white;
+}
+
+.grading {
+    padding: 12px 3.6pc;
+    background: #DBEBF8;
+    color: #1068a7;
+    font-size: 20px;
+    border-radius: 7px;
+    margin-top: 1.3pc;
+    text-transform: uppercase;
+}
+
+.caption_grade_text h3 {
+    word-spacing: 10px;
+    line-height: 3;
+}
+
+.you_grade,
+h2 {
+    text-transform: capitalize;
+    font-family: monospace;
+    display: flex;
+    padding: 10px 11px 4pc 10px;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    gap: 1.1pc;
+}
+
+#grade {
+    margin-top: 25px !important;
+    font-size: 18px;
+    display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+    .caption_grade_text h3 {
+        font-size: 12px !important;
+    }
+
+    .you_grade {
+        font-size: 17px;
+    }
+
+    #grade {
+        font-size: 17px;
+    }
+
+    th {
+        font-size: 13px;
+    }
+
+    img[alt="image"] {
+        width: 140px;
+    }
+
+    .title h1 {
+        font-size: 2rem;
+    }
+
+    .cdn {
+        font-size: 17px;
+    }
+
+    .student_name {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 717px) {
+    .caption_grade_text h3 {
+        font-size: 9px !important;
+    }
+
+    .you_grade {
+        font-size: 16px;
+    }
+
+    #grade {
+        font-size: 16px;
+    }
+
+    th {
+        font-size: 7px;
+    }
+
+    td {
+        font-size: 10px;
+    }
+
+    h3 {
+        font-size: 13px;
+    }
+
+    .flex-wrap {
+        font-size: 12px;
+    }
+
+    img[alt="image"] {
+        width: 88px;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+    }
+
+    .cdn {
+        font-size: 15px;
+    }
+
+    .student_name {
+        font-size: 12px;
+    }
+
+    .caption {
+        gap: 2pc;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .caption_grade_text h3 {
+        font-size: 9px !important;
+    }
+
+    .you_grade {
+        font-size: 16px;
+    }
+
+    #grade {
+        font-size: 16px;
+    }
+
+    th {
+        font-size: 7px;
+    }
+
+    td {
+        font-size: 10px;
+    }
+
+    h3 {
+        font-size: 9px !important;
+    }
+
+    span {
+        font-size: 12px !important;
+    }
+
+    #getName,
+    #getfName,
+    #surName {
+        font-size: 9px !important;
+    }
+
+    .flex-wrap {
+        font-size: 11px;
+    }
+
+    img[alt="image"] {
+        width: 88px;
+    }
+
+    .title h1 {
+        font-size: 1.4rem;
+    }
+
+    .cdn {
+        font-size: 13px;
+    }
+
+    .student_name {
+        font-size: 12px !important;
+        gap: 0.7pc !important;
+    }
+
+    .caption {
+        gap: 1pc;
+    }
+
+    h2 {
+        font-size: 14px !important;
+    }
 }
