@@ -223,6 +223,6 @@ gradingDiv.appendChild(yourGradeDiv);
 marksheet.appendChild(gradingDiv);
 
 // Append the whole marksheet to the document body or a specific container
-document.body.appendChild(marksheet);
+document.getElementById('markContainer').appendChild(marksheet);
 
 // >>>>>>>>>>>>>>>>>>>>>>... end Marksheet
