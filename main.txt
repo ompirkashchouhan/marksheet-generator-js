@@ -1,0 +1,111 @@
+// marksheet Source code
+
+<div class="marksheet">
+                <div class="caption">
+                    <div class="logo"><img src="/assets/image/logo.png" width="170" alt="image"></div>
+                    <div class="title">
+                        <h1>Marksheet Report</h1> <span class="cdn">Codenetic Center</span>
+                    </div>
+                </div>
+                <!-- Rendor Student info -->
+                <div class="contain_render_data">
+                    <div class="flex-wrap">
+                        <div class="student_name flex-row">
+                            <h3>Name:</h3> <span id="getName">RandomName</span>
+                        </div>
+                        <div class="student_fName flex-row">
+                            <h3>Father Name:</h3><span id="getfName">RandomName</span>
+                        </div>
+                        <div class="student_surname">
+                            <h3>Surname:</h3> <span id="surName">RandomName</span>
+                        </div>
+                    </div>
+                    <div class="flex-wrap">
+                        <div class="student_group">
+                            <h3>Group:</h3> <span id="Group">science</span>
+                        </div>
+                        <div class="student_seatnum">
+                            <h3>Seat No:</h3> <span id="seatNum">9802</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Table form -->
+                <div class="mainTab">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Obtent Marks</th>
+                                <th>Total Marks</th>
+                                <th>Min Marks</th>
+                                <th>Percentage</th>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>70</td>
+                                <td>100</td>
+                                <td>30</td>
+                                <td>32.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Physics</td>
+                                <td>75</td>
+                                <td>100</td>
+                                <td>30</td>
+                                <td>50.5%</td>
+                            </tr>
+                            <tr>
+                                <td>Chemistry</td>
+                                <td>69</td>
+                                <td>100</td>
+                                <td>30</td>
+                                <td>63.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Math</td>
+                                <td>67</td>
+                                <td>100</td>
+                                <td>30</td>
+                                <td>51.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Urdu</td>
+                                <td>67</td>
+                                <td>100</td>
+                                <td>30</td>
+                                <td>43.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Computer Scrience</td>
+                                <td>83</td>
+                                <td>100</td>
+                                <td>30</td>
+                                <td>70.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Biology</td>
+                                <td>86</td>
+                                <td>100</td>
+                                <td>30</td>
+                                <td>81.2%</td>
+                            </tr>
+                            <tr>
+                                <td class="same">Total</td>
+                                <td class="same">517</td>
+                                <td class="same">800</td>
+                                <td class="same">210</td>
+                                <td class="same">94.2%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Grad section -->
+                <div class="grading">
+                    <div class="caption_grade_text">
+                        <h3>Grading Scale: A = 90% to 100% B = 80%-89% C = 60%-79% D = 0%-59%</h3>
+                    </div>
+                    <div class="you_grade">
+                        <h2>Grade:</h2> <span id="grade">A</span>
+                    </div>
+                </div>
+            </div>

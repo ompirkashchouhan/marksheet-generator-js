@@ -1,0 +1,393 @@
+* {
+    font-family: math;
+    cursor: default;
+}
+
+/* marksheet styles */
+/* flex row */
+
+.marksheet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: stretch;
+    margin: 25px;
+    border: 1px solid grey;
+}
+
+.caption {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    background: #DBEBF8;
+    gap: 3.1pc;
+    padding: 14px;
+}
+
+.title h1 {
+
+    color: #1069a7;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.contain_render_data {
+    color: #5597AF;
+    margin-top: 2pc;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.student_name,
+.student_fName,
+.student_surname {
+    margin-bottom: 8px;
+    font-weight: 800;
+    font-family: math;
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 2pc;
+}
+
+#getName,
+#getfName,
+#surName,
+#seatNum,
+#Group {
+    border-bottom: 1px solid;
+    border-bottom-width: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-size: 16px !important;
+    display: inline !important;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.student_group,
+.student_seatnum {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    gap: 23px;
+}
+
+.cdn {
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #1068a7;
+}
+
+th {
+    background: #1068a7;
+    padding: 5px 12px;
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    border-color: #1069a7;
+}
+
+td {
+    color: #649bba;
+    text-align: center;
+}
+
+.mainTab {
+    padding: 22px 4pc;
+}
+
+.same {
+    background-color: #1068a7;
+    color: white;
+}
+
+.grading {
+    padding: 12px 3.6pc;
+    background: #DBEBF8;
+    color: #1068a7;
+    font-size: 20px;
+    border-radius: 7px;
+    margin-top: 1.3pc;
+    text-transform: uppercase;
+}
+
+.caption_grade_text h3 {
+    word-spacing: 10px;
+    line-height: 3;
+}
+
+.you_grade,
+h2 {
+    text-transform: capitalize;
+    font-family: monospace;
+    display: flex;
+    padding: 10px 11px 4pc 10px;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    gap: 1.1pc;
+}
+
+#grade {
+    margin-top: 25px !important;
+    font-size: 18px;
+    display: flex;
+}
+
+@media only screen and (max-width: 830px) {
+    .caption_grade_text h3 {
+        font-size: 12px !important;
+    }
+
+    .mainTab {
+        padding: 12px 3.2pc;
+    }
+
+    .you_grade {
+        font-size: 17px;
+    }
+
+    #grade {
+        font-size: 17px;
+    }
+
+    th {
+        font-size: 13px;
+    }
+
+    img[alt="image"] {
+        width: 140px;
+    }
+
+    .title h1 {
+        font-size: 2rem;
+    }
+
+    .cdn {
+        font-size: 17px;
+    }
+
+    .student_name {
+        font-size: 12px;
+    }
+}
+
+/* Media Queiry */
+@media only screen and (max-width: 717px) {
+    .caption_grade_text h3 {
+        font-size: 9px !important;
+    }
+
+    .mainTab {
+        padding: 12px 3pc;
+    }
+
+    .you_grade {
+        font-size: 16px;
+    }
+
+    #grade {
+        font-size: 16px;
+    }
+
+    th {
+        font-size: 7px;
+    }
+
+    td {
+        font-size: 10px;
+    }
+
+    h3 {
+        font-size: 13px;
+    }
+
+    .flex-wrap {
+        font-size: 12px;
+    }
+
+    img[alt="image"] {
+        width: 88px;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+    }
+
+    .cdn {
+        font-size: 15px;
+    }
+
+    .student_name {
+        font-size: 12px;
+    }
+
+    .caption {
+        gap: 2pc;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .caption_grade_text h3 {
+        font-size: 9px !important;
+    }
+
+    .you_grade {
+        font-size: 16px;
+        padding: 0;
+    }
+
+    .grading {
+        padding: 13px !important;
+        margin: 0 !important;
+    }
+
+    #grade {
+        font-size: 16px;
+    }
+
+    th {
+        font-size: 7px;
+    }
+
+    td {
+        font-size: 10px;
+    }
+
+    h3 {
+        font-size: 7px !important;
+        line-height: 0;
+        word-spacing: 0;
+    }
+
+    span {
+        font-size: 12px !important;
+    }
+
+    #getName,
+    #getfName,
+    #surName,
+    #seatNum,
+    #Group {
+        font-size: 9px !important;
+    }
+
+    .flex-wrap {
+        font-size: 11px;
+    }
+
+    img[alt="image"] {
+        width: 88px;
+    }
+
+    .title h1 {
+        font-size: 1.4rem;
+    }
+
+    .cdn {
+        font-size: 13px;
+    }
+
+    .student_name {
+        font-size: 12px !important;
+        gap: 0.7pc !important;
+    }
+
+    .caption {
+        gap: 1pc;
+    }
+
+    h2 {
+        font-size: 14px !important;
+    }
+
+    .mainTab {
+        padding: 12px 1pc;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .title h1 {
+        font-size: 1.2rem;
+    }
+
+    .cdn {
+        font-size: 9px !important;
+    }
+
+    th {
+        font-size: 6px;
+        padding: 3px;
+    }
+
+    td {
+        font-size: 9px;
+    }
+
+    #getName,
+    #getfName,
+    #surName,
+    #seatNum,
+    #Group {
+        font-size: 8px !important;
+    }
+
+    h3 {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 447px) {
+    th {
+        font-size: 5px;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    th {
+        font-size: 3px;
+        padding: 3px;
+    }
+
+    #surname {
+        font-size: 6px !important;
+    }
+}
+
+/* end */
