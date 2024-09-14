@@ -169,9 +169,13 @@ h2 {
     display: flex;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 830px) {
     .caption_grade_text h3 {
         font-size: 12px !important;
+    }
+
+    .mainTab {
+        padding: 12px 3.2pc;
     }
 
     .you_grade {
@@ -203,9 +207,14 @@ h2 {
     }
 }
 
+/* Media Queiry */
 @media only screen and (max-width: 717px) {
     .caption_grade_text h3 {
         font-size: 9px !important;
+    }
+
+    .mainTab {
+        padding: 12px 3pc;
     }
 
     .you_grade {
@@ -260,6 +269,12 @@ h2 {
 
     .you_grade {
         font-size: 16px;
+        padding: 0;
+    }
+
+    .grading {
+        padding: 13px !important;
+        margin: 0 !important;
     }
 
     #grade {
@@ -275,7 +290,9 @@ h2 {
     }
 
     h3 {
-        font-size: 9px !important;
+        font-size: 7px !important;
+        line-height: 0;
+        word-spacing: 0;
     }
 
     span {
@@ -284,7 +301,9 @@ h2 {
 
     #getName,
     #getfName,
-    #surName {
+    #surName,
+    #seatNum,
+    #Group {
         font-size: 9px !important;
     }
 
@@ -316,4 +335,59 @@ h2 {
     h2 {
         font-size: 14px !important;
     }
+
+    .mainTab {
+        padding: 12px 1pc;
+    }
 }
+
+@media only screen and (max-width: 510px) {
+    .title h1 {
+        font-size: 1.2rem;
+    }
+
+    .cdn {
+        font-size: 9px !important;
+    }
+
+    th {
+        font-size: 6px;
+        padding: 3px;
+    }
+
+    td {
+        font-size: 9px;
+    }
+
+    #getName,
+    #getfName,
+    #surName,
+    #seatNum,
+    #Group {
+        font-size: 8px !important;
+    }
+
+    h3 {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 447px) {
+    th {
+        font-size: 5px;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    th {
+        font-size: 3px;
+        padding: 3px;
+    }
+
+    #surname {
+        font-size: 6px !important;
+    }
+}
+
+/* end */
