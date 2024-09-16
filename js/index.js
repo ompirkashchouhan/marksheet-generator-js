@@ -149,10 +149,28 @@ function submitForm() {
       },
       {
         names: "Total",
-        obtentMarks: Number(englishMark.value) + Number(physicsMark.value) + Number(chemistryMark.value) + Number(mathMark.value) + Number(urduMark.value) + Number(csMark.value) + Number(biologyMark.value),
+        obtentMarks:
+          Number(englishMark.value) +
+          Number(physicsMark.value) +
+          Number(chemistryMark.value) +
+          Number(mathMark.value) +
+          Number(urduMark.value) +
+          Number(csMark.value) +
+          Number(biologyMark.value),
         totalMarks: 700,
         minMarks: 231,
-        percentage: ((Number(englishMark.value) + Number(physicsMark.value) + Number(chemistryMark.value) + Number(mathMark.value) + Number(urduMark.value) + Number(csMark.value) + Number(biologyMark.value) ) / (700) * (100)).toFixed(0) + "%" ,
+        percentage:
+          (
+            ((Number(englishMark.value) +
+              Number(physicsMark.value) +
+              Number(chemistryMark.value) +
+              Number(mathMark.value) +
+              Number(urduMark.value) +
+              Number(csMark.value) +
+              Number(biologyMark.value)) /
+              700) *
+            100
+          ).toFixed(0) + "%",
       },
     ];
 
@@ -334,74 +352,88 @@ function submitForm() {
 
       // Add the row to the table body
       tbody.appendChild(tr);
-}
+    }
 
     table.appendChild(tbody);
     mainTab.appendChild(table);
     marksheet.appendChild(mainTab);
 
-// Grading Section
-var gradingDiv = document.createElement('div');
-gradingDiv.className = 'grading';
+    // Grading Section
+    var gradingDiv = document.createElement("div");
+    gradingDiv.className = "grading";
 
-// Grading Scale Text
-var captionGradeText = document.createElement('div');
-captionGradeText.className = 'caption_grade_text';
-var gradingScaleH3 = document.createElement('h3');
-gradingScaleH3.innerText = 'Grading Scale: A = 90% to 100% B = 80%-89% C = 60%-79% D = 0%-59%';
-captionGradeText.appendChild(gradingScaleH3);
+    // Grading Scale Text
+    var captionGradeText = document.createElement("div");
+    captionGradeText.className = "caption_grade_text";
+    var gradingScaleH3 = document.createElement("h3");
+    gradingScaleH3.innerText =
+      "Grading Scale: A-1 = 90% to 100% A = 80%-89% B = 60%-79% C = 33%-59%";
+    captionGradeText.appendChild(gradingScaleH3);
 
-// Your Grade
-var yourGradeDiv = document.createElement('div');
-yourGradeDiv.className = 'you_grade';
-var gradeH2 = document.createElement('h2');
-gradeH2.innerText = 'Grade:';
-var gradeSpan = document.createElement('span');
-gradeSpan.id = 'grade';
-gradeSpan.innerText = '';
-yourGradeDiv.appendChild(gradeH2);
-yourGradeDiv.appendChild(gradeSpan);
+    // Your Grade
+    var yourGradeDiv = document.createElement("div");
+    yourGradeDiv.className = "you_grade";
+    var gradeH2 = document.createElement("h2");
+    gradeH2.innerText = "Grade:";
+    var gradeSpan = document.createElement("span");
+    gradeSpan.id = "grade";
+    gradeSpan.innerText = "";
+    yourGradeDiv.appendChild(gradeH2);
+    yourGradeDiv.appendChild(gradeSpan);
 
     // Add grading sections to the container
     gradingDiv.appendChild(captionGradeText);
     gradingDiv.appendChild(yourGradeDiv);
     marksheet.appendChild(gradingDiv);
 
-// Append the whole marksheet to the document body or a specific container
-document.getElementById('markContainer').appendChild(marksheet);
+    // Append the whole marksheet to the document body or a specific container
+    document.getElementById("markContainer").appendChild(marksheet);
 
-var storedDataInp = [{
-    nam: nameInp.value,
-    fNam: fName.value,
-    surNam: surname.value,
-    groupNam: group.value,
-    seatNam: seatNumber.value
-}]
+    var storedDataInp = [
+      {
+        nam: nameInp.value,
+        fNam: fName.value,
+        surNam: surname.value,
+        groupNam: group.value,
+        seatNam: seatNumber.value,
+      },
+    ];
 
-for(var i = 0; i < storedDataInp.length; i++){
-    getNameSpan.innerHTML = storedDataInp[i].nam
-    getfNameSpan.innerHTML = storedDataInp[i].fNam
-    surNameSpan.innerHTML = storedDataInp[i].surNam
-    groupSpan.innerHTML = storedDataInp[i].groupNam
-    seatNumSpan.innerHTML = storedDataInp[i].seatNam
-}
+    for (var i = 0; i < storedDataInp.length; i++) {
+      getNameSpan.innerHTML = storedDataInp[i].nam;
+      getfNameSpan.innerHTML = storedDataInp[i].fNam;
+      surNameSpan.innerHTML = storedDataInp[i].surNam;
+      groupSpan.innerHTML = storedDataInp[i].groupNam;
+      seatNumSpan.innerHTML = storedDataInp[i].seatNam;
+    }
 
-var totalPercentage = Number(subjects[7].percentage.slice(0,2))
+    var totalPercentage = Number(subjects[7].percentage.slice(0, 2));
 
-if(totalPercentage >= 90 && totalPercentage <= 100){
-    gradeSpan.innerHTML = "Congratulation's you have a got (A-1) Grade ."
-} else if(totalPercentage >= 80 && totalPercentage <= 89){
-    gradeSpan.innerHTML = "Congratulation's you have a got (A) Grade ."
-} else if(totalPercentage >= 60 && totalPercentage <= 79){
-    gradeSpan.innerHTML = "You have a got (B) Grade ."
-} else if(totalPercentage >= 33 && totalPercentage <= 59){
-    gradeSpan.innerHTML = "You have a got (C) Grade ."
-} else if(totalPercentage > 0 && totalPercentage <= 33){
-    gradeSpan.innerHTML = "Fail ."
-}
+    if (totalPercentage >= 90 && totalPercentage <= 100) {
+      gradeSpan.innerHTML = "Congratulation's you have a got (A-1) Grade .";
+    } else if (totalPercentage >= 80 && totalPercentage <= 89) {
+      gradeSpan.innerHTML = "Congratulation's you have a got (A) Grade .";
+    } else if (totalPercentage >= 60 && totalPercentage <= 79) {
+      gradeSpan.innerHTML = "You have a got (B) Grade .";
+    } else if (totalPercentage >= 33 && totalPercentage <= 59) {
+      gradeSpan.innerHTML = "You have a got (C) Grade .";
+    } else if (totalPercentage > 0 && totalPercentage <= 33) {
+      gradeSpan.innerHTML = "Fail .";
+    }
 
+    // >>>>>>>>>>>>>>>>>>>>>>... end Marksheet
+  }
 
-// >>>>>>>>>>>>>>>>>>>>>>... end Marksheet 
-
-} 
+  nameInp.value = "";
+  fName.value = "";
+  surname.value = "";
+  group.value = "";
+  seatNumber.value = "";
+  englishMark.value = "";
+  physicsMark.value = "";
+  chemistryMark.value = "";
+  mathMark.value = "";
+  urduMark.value = "";
+  csMark.value = "";
+  biologyMark.value = "";
 }
