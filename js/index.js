@@ -335,53 +335,41 @@ function submitForm() {
 
       // Add the row to the table body
       tbody.appendChild(tr);
-    }
+}
 
-    table.appendChild(tbody);
+table.appendChild(tbody);
     mainTab.appendChild(table);
     marksheet.appendChild(mainTab);
 
-    // Grading Section
-    var gradingDiv = document.createElement("div");
-    gradingDiv.className = "grading";
+// Grading Section
+var gradingDiv = document.createElement('div');
+gradingDiv.className = 'grading';
 
-    // Grading Scale Text
-    var captionGradeText = document.createElement("div");
-    captionGradeText.className = "caption_grade_text";
-    var gradingScaleH3 = document.createElement("h3");
-    gradingScaleH3.innerText =
-      "Grading Scale: A = 90% to 100% B = 80%-89% C = 60%-79% D = 0%-59%";
-    captionGradeText.appendChild(gradingScaleH3);
+// Grading Scale Text
+var captionGradeText = document.createElement('div');
+captionGradeText.className = 'caption_grade_text';
+var gradingScaleH3 = document.createElement('h3');
+gradingScaleH3.innerText = 'Grading Scale: A = 90% to 100% B = 80%-89% C = 60%-79% D = 0%-59%';
+captionGradeText.appendChild(gradingScaleH3);
 
-    // Your Grade
-    var yourGradeDiv = document.createElement("div");
-    yourGradeDiv.className = "you_grade";
-    var gradeH2 = document.createElement("h2");
-    gradeH2.innerText = "Grade:";
-    var gradeSpan = document.createElement("span");
-    gradeSpan.id = "grade";
-    gradeSpan.innerText = "</>";
-    yourGradeDiv.appendChild(gradeH2);
-    yourGradeDiv.appendChild(gradeSpan);
+// Your Grade
+var yourGradeDiv = document.createElement('div');
+yourGradeDiv.className = 'you_grade';
+var gradeH2 = document.createElement('h2');
+gradeH2.innerText = 'Grade:';
+var gradeSpan = document.createElement('span');
+gradeSpan.id = 'grade';
+gradeSpan.innerText = '</>';
+yourGradeDiv.appendChild(gradeH2);
+yourGradeDiv.appendChild(gradeSpan);
 
     // Add grading sections to the container
     gradingDiv.appendChild(captionGradeText);
     gradingDiv.appendChild(yourGradeDiv);
     marksheet.appendChild(gradingDiv);
 
-    // Append the whole marksheet to the document body or a specific container
-    document.getElementById("markContainer").appendChild(marksheet);
+// Append the whole marksheet to the document body or a specific container
+document.getElementById('markContainer').appendChild(marksheet);
+// >>>>>>>>>>>>>>>>>>>>>>... end Marksheet 
 
-    // Fill The Inputs Data In Marksheet // 
-
-    var storedDataInputs = [{
-        nam: nameInp.value,
-        fNam: fName.value,
-        surNam:surname.value
-    }]
-
-    
-
-    // >>>>>>>>>>>>>>>>>>>>>>... end Marksheet
-  }
-}
+} }
