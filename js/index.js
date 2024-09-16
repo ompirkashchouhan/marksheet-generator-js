@@ -100,59 +100,59 @@ function submitForm() {
     var subjects = [
       {
         names: "English",
-        obtentMarks: 70,
+        obtentMarks: englishMark.value,
         totalMarks: 100,
-        minMarks: 30,
-        percentage: "32.2%",
+        minMarks: 33,
+        percentage: (Number(englishMark.value) / 100) * 100 + "%",
       },
       {
         names: "Physics",
-        obtentMarks: 75,
+        obtentMarks: physicsMark.value,
         totalMarks: 100,
-        minMarks: 30,
-        percentage: "50.5%",
+        minMarks: 33,
+        percentage: (Number(physicsMark.value) / 100) * 100 + "%",
       },
       {
         names: "Chemistry",
-        obtentMarks: 69,
+        obtentMarks: chemistryMark.value,
         totalMarks: 100,
-        minMarks: 30,
-        percentage: "63.6%",
+        minMarks: 33,
+        percentage: (Number(chemistryMark.value) / 100) * 100 + "%",
       },
       {
         names: "Math",
-        obtentMarks: 67,
+        obtentMarks: mathMark.value,
         totalMarks: 100,
-        minMarks: 30,
-        percentage: "51.2%",
+        minMarks: 33,
+        percentage: (Number(mathMark.value) / 100) * 100 + "%",
       },
       {
         names: "Urdu",
-        obtentMarks: 67,
+        obtentMarks: urduMark.value,
         totalMarks: 100,
-        minMarks: 30,
-        percentage: "43.2%",
+        minMarks: 33,
+        percentage: (Number(urduMark.value) / 100) * 100 + "%",
       },
       {
         names: "Computer Science",
-        obtentMarks: 83,
+        obtentMarks: csMark.value,
         totalMarks: 100,
-        minMarks: 30,
-        percentage: "70.2%",
+        minMarks: 33,
+        percentage: (Number(csMark.value) / 100) * 100 + "%",
       },
       {
         names: "Biology",
-        obtentMarks: 86,
+        obtentMarks: biologyMark.value,
         totalMarks: 100,
-        minMarks: 30,
-        percentage: "81.2%",
+        minMarks: 33,
+        percentage: (Number(biologyMark.value) / 100) * 100 + "%",
       },
       {
         names: "Total",
-        obtentMarks: 517,
-        totalMarks: 800,
-        minMarks: 210,
-        percentage: "94.2%",
+        obtentMarks: Number(englishMark.value) + Number(physicsMark.value) + Number(chemistryMark.value) + Number(mathMark.value) + Number(urduMark.value) + Number(csMark.value) + Number(biologyMark.value),
+        totalMarks: 700,
+        minMarks: 231,
+        percentage: ((Number(englishMark.value) + Number(physicsMark.value) + Number(chemistryMark.value) + Number(mathMark.value) + Number(urduMark.value) + Number(csMark.value) + Number(biologyMark.value) ) / (700) * (100)).toFixed(0) + "%" ,
       },
     ];
 
@@ -259,7 +259,7 @@ function submitForm() {
     studentSeatNumH3.innerText = "Seat No:";
     var seatNumSpan = document.createElement("span");
     seatNumSpan.id = "seatNum";
-    seatNumSpan.innerText = "9802";
+    seatNumSpan.innerText = "";
     studentSeatNum.appendChild(studentSeatNumH3);
     studentSeatNum.appendChild(seatNumSpan);
 
@@ -331,13 +331,12 @@ function submitForm() {
       var tdPercentage = document.createElement("td");
       tdPercentage.innerText = subjects[i].percentage;
       tr.appendChild(tdPercentage);
-      console.log(subjects[i]);
 
       // Add the row to the table body
       tbody.appendChild(tr);
 }
 
-table.appendChild(tbody);
+    table.appendChild(tbody);
     mainTab.appendChild(table);
     marksheet.appendChild(mainTab);
 
@@ -359,7 +358,7 @@ var gradeH2 = document.createElement('h2');
 gradeH2.innerText = 'Grade:';
 var gradeSpan = document.createElement('span');
 gradeSpan.id = 'grade';
-gradeSpan.innerText = '</>';
+gradeSpan.innerText = '';
 yourGradeDiv.appendChild(gradeH2);
 yourGradeDiv.appendChild(gradeSpan);
 
@@ -370,6 +369,39 @@ yourGradeDiv.appendChild(gradeSpan);
 
 // Append the whole marksheet to the document body or a specific container
 document.getElementById('markContainer').appendChild(marksheet);
+
+var storedDataInp = [{
+    nam: nameInp.value,
+    fNam: fName.value,
+    surNam: surname.value,
+    groupNam: group.value,
+    seatNam: seatNumber.value
+}]
+
+for(var i = 0; i < storedDataInp.length; i++){
+    getNameSpan.innerHTML = storedDataInp[i].nam
+    getfNameSpan.innerHTML = storedDataInp[i].fNam
+    surNameSpan.innerHTML = storedDataInp[i].surNam
+    groupSpan.innerHTML = storedDataInp[i].groupNam
+    seatNumSpan.innerHTML = storedDataInp[i].seatNam
+}
+
+var totalPercentage = Number(subjects[7].percentage.slice(0,2))
+
+if(totalPercentage >= 90 && totalPercentage <= 100){
+    gradeSpan.innerHTML = "Congratulation's you have a got (A-1) Grade ."
+} else if(totalPercentage >= 80 && totalPercentage <= 89){
+    gradeSpan.innerHTML = "Congratulation's you have a got (A) Grade ."
+} else if(totalPercentage >= 60 && totalPercentage <= 79){
+    gradeSpan.innerHTML = "You have a got (B) Grade ."
+} else if(totalPercentage >= 33 && totalPercentage <= 59){
+    gradeSpan.innerHTML = "You have a got (C) Grade ."
+} else if(totalPercentage > 0 && totalPercentage <= 33){
+    gradeSpan.innerHTML = "Fail ."
+}
+
+
 // >>>>>>>>>>>>>>>>>>>>>>... end Marksheet 
 
-} }
+} 
+}
