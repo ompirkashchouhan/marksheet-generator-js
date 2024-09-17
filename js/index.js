@@ -149,7 +149,14 @@ function submitForm() {
       },
       {
         names: "Total",
-        obtentMarks: Number(englishMark.value) + Number(physicsMark.value) + Number(chemistryMark.value) + Number(mathMark.value) + Number(urduMark.value) + Number(csMark.value) + Number(biologyMark.value),
+        obtentMarks:
+          Number(englishMark.value) +
+          Number(physicsMark.value) +
+          Number(chemistryMark.value) +
+          Number(mathMark.value) +
+          Number(urduMark.value) +
+          Number(csMark.value) +
+          Number(biologyMark.value),
         totalMarks: 700,
         minMarks: 231,
         percentage: ((Number(englishMark.value) + Number(physicsMark.value) + Number(chemistryMark.value) + Number(mathMark.value) + Number(urduMark.value) + Number(csMark.value) + Number(biologyMark.value)) / (700) * (100)).toFixed(0) + "%",
