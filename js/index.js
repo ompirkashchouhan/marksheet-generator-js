@@ -4,6 +4,7 @@ var fName = document.getElementById("fatherName");
 var surname = document.getElementById("surname1");
 var group = document.getElementById("group");
 var seatNumber = document.getElementById("seatNumber");
+
 // Get Inputs Step : 2
 var englishMark = document.getElementById("english");
 var physicsMark = document.getElementById("physics");
@@ -12,6 +13,39 @@ var mathMark = document.getElementById("math");
 var urduMark = document.getElementById("urdu");
 var csMark = document.getElementById("computerScience");
 var biologyMark = document.getElementById("Biology");
+
+// Restrict the seat number input to a maximum of 5 digits
+seatNumber.addEventListener('input', function () {
+  if (seatNumber.value.length > 5) {
+    seatNumber.value = seatNumber.value.slice(0, 5);
+  }
+});
+
+// Function to limit input length and value to 100
+function limitInputLengthAndValue(inputField) {
+  inputField.addEventListener('input', function () {
+    // Limit input length to 5 digits
+    if (inputField.value.length > 5) {
+      inputField.value = inputField.value.slice(0, 5);
+    }
+
+    // Restrict value to a maximum of 100
+    if (Number(inputField.value) > 100) {
+      inputField.value = 100;
+    }
+  });
+}
+
+// Apply restrictions to subject input fields
+limitInputLengthAndValue(englishMark);
+limitInputLengthAndValue(physicsMark);
+limitInputLengthAndValue(chemistryMark);
+limitInputLengthAndValue(mathMark);
+limitInputLengthAndValue(urduMark);
+limitInputLengthAndValue(csMark);
+limitInputLengthAndValue(biologyMark);
+
+// The rest of your code...
 
 // Error Messages
 var stepFirstError = document.getElementById("topStepError");
