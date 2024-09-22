@@ -1,9 +1,10 @@
 // Get Inputs Step : 1
 var nameInp = document.getElementById("name");
 var fName = document.getElementById("fatherName");
-var surname = document.getElementById("surname");
+var surname = document.getElementById("surname1");
 var group = document.getElementById("group");
 var seatNumber = document.getElementById("seatNumber");
+
 // Get Inputs Step : 2
 var englishMark = document.getElementById("english");
 var physicsMark = document.getElementById("physics");
@@ -12,6 +13,39 @@ var mathMark = document.getElementById("math");
 var urduMark = document.getElementById("urdu");
 var csMark = document.getElementById("computerScience");
 var biologyMark = document.getElementById("Biology");
+
+// Restrict the seat number input to a maximum of 5 digits
+seatNumber.addEventListener('input', function () {
+  if (seatNumber.value.length > 5) {
+    seatNumber.value = seatNumber.value.slice(0, 5);
+  }
+});
+
+// Function to limit input length and value to 100
+function limitInputLengthAndValue(inputField) {
+  inputField.addEventListener('input', function () {
+    // Limit input length to 5 digits
+    if (inputField.value.length > 5) {
+      inputField.value = inputField.value.slice(0, 3);
+    }
+
+    // Restrict value to a maximum of 100
+    if (Number(inputField.value) > 100) {
+      inputField.value = 100;
+    }
+  });
+}
+
+// Apply restrictions to subject input fields
+limitInputLengthAndValue(englishMark);
+limitInputLengthAndValue(physicsMark);
+limitInputLengthAndValue(chemistryMark);
+limitInputLengthAndValue(mathMark);
+limitInputLengthAndValue(urduMark);
+limitInputLengthAndValue(csMark);
+limitInputLengthAndValue(biologyMark);
+
+// The rest of your code...
 
 // Error Messages
 var stepFirstError = document.getElementById("topStepError");
@@ -164,9 +198,9 @@ function submitForm() {
           Number(urduMark.value) +
           Number(csMark.value) +
           Number(biologyMark.value),
-          totalMarks: 700,
-          minMarks: 231,
-          percentage:
+        totalMarks: 700,
+        minMarks: 231,
+        percentage:
           (
             ((Number(englishMark.value) +
               Number(physicsMark.value) +
@@ -366,25 +400,25 @@ function submitForm() {
     marksheet.appendChild(mainTab);
 
     // Grading Section
-    var gradingDiv = document.createElement("div");
-    gradingDiv.className = "grading";
+    var gradingDiv = document.createElement('div');
+    gradingDiv.className = 'grading';
 
     // Grading Scale Text
     var captionGradeText = document.createElement("div");
     captionGradeText.className = "caption_grade_text";
     var gradingScaleH3 = document.createElement("h3");
     gradingScaleH3.innerText =
-      "Grading Scale: A-1 = 90% to 100% || A = 80%-89% || B = 60%-79% || C = 33%-59% || Fail = 0%-33%";
+      "Grading Scale: A-1 = 90% to 100% A = 80%-89% B = 60%-79% C = 33%-59%";
     captionGradeText.appendChild(gradingScaleH3);
 
     // Your Grade
-    var yourGradeDiv = document.createElement("div");
-    yourGradeDiv.className = "you_grade";
-    var gradeH2 = document.createElement("h2");
-    gradeH2.innerText = "Grade:";
-    var gradeSpan = document.createElement("span");
-    gradeSpan.id = "grade";
-    gradeSpan.innerText = "";
+    var yourGradeDiv = document.createElement('div');
+    yourGradeDiv.className = 'you_grade';
+    var gradeH2 = document.createElement('h2');
+    gradeH2.innerText = 'Grade:';
+    var gradeSpan = document.createElement('span');
+    gradeSpan.id = 'grade';
+    gradeSpan.innerText = '';
     yourGradeDiv.appendChild(gradeH2);
     yourGradeDiv.appendChild(gradeSpan);
 
@@ -394,56 +428,55 @@ function submitForm() {
     marksheet.appendChild(gradingDiv);
 
     // Append the whole marksheet to the document body or a specific container
-    document.getElementById("markContainer").appendChild(marksheet);
+    document.getElementById('markContainer').appendChild(marksheet);
 
     var storedDataInp = [
       {
-        nam: nameInp.value.slice(0,3),
-        fNam: fName.value.slice(0,3),
-        surNam: surname.value.slice(0,3),
-        groupNam: group.value.slice(0,3),
-        seatNam: seatNumber.value.slice(0,3),
+        nam: nameInp.value,
+        fNam: fName.value,
+        surNam: surname.value,
+        groupNam: group.value,
+        seatNam: seatNumber.value,
       },
     ];
 
     for (var i = 0; i < storedDataInp.length; i++) {
-      getNameSpan.innerHTML = storedDataInp[i].nam;
-      getfNameSpan.innerHTML = storedDataInp[i].fNam;
-      surNameSpan.innerHTML = storedDataInp[i].surNam;
-      groupSpan.innerHTML = storedDataInp[i].groupNam;
-      seatNumSpan.innerHTML = storedDataInp[i].seatNam;
+      getNameSpan.innerHTML = storedDataInp[i].nam
+      getfNameSpan.innerHTML = storedDataInp[i].fNam
+      surNameSpan.innerHTML = storedDataInp[i].surNam
+      groupSpan.innerHTML = storedDataInp[i].groupNam
+      seatNumSpan.innerHTML = storedDataInp[i].seatNam
     }
 
-    var totalPercentage = Number(subjects[7].percentage.slice(0, 2));
+    var totalPercentage = Number(subjects[7].percentage.slice(0, 2))
 
     if (totalPercentage >= 90 && totalPercentage <= 100) {
       gradeSpan.innerHTML = "Congratulation's you have a got (A-1) Grade .";
-    } else if (totalPercentage == 100) {
-      gradeSpan.innerHTML = "Congratulation's you have a got (A-1) Grade .";
-    } else if (totalPercentage == 0) {
-      gradeSpan.innerHTML = "You're fail";
     } else if (totalPercentage >= 80 && totalPercentage <= 89) {
-      gradeSpan.innerHTML = "Congratulation's you have a got (A) Grade .";
+      gradeSpan.innerHTML = "Congratulation's you have a got (A) Grade ."
     } else if (totalPercentage >= 60 && totalPercentage <= 79) {
-      gradeSpan.innerHTML = "You have a got (B) Grade .";
+      gradeSpan.innerHTML = "You have a got (B) Grade ."
     } else if (totalPercentage >= 33 && totalPercentage <= 59) {
-      gradeSpan.innerHTML = "You have a got (C) Grade .";
+      gradeSpan.innerHTML = "You have a got (C) Grade ."
     } else if (totalPercentage > 0 && totalPercentage <= 33) {
-      gradeSpan.innerHTML = "You're fail";
+      gradeSpan.innerHTML = "Fail .";
     }
 
-    // >>>>>>>>>>>>>>>>>>>>>>... end Marksheet
+
+    // >>>>>>>>>>>>>>>>>>>>>>... end Marksheet 
+
   }
+
+  // nameInp.value = "";
+  // fName.value = "";
+  // surname.value = "";
+  // group.value = "";
+  // seatNumber.value = "";
+  // englishMark.value = "";
+  // physicsMark.value = "";
+  // chemistryMark.value = "";
+  // mathMark.value = "";
+  // urduMark.value = "";
+  // csMark.value = "";
+  // biologyMark.value = "";
 }
-  nameInp.value = "";
-  fName.value = "";
-  surname.value = "";
-  group.value = "";
-  seatNumber.value = "";
-  englishMark.value = "";
-  physicsMark.value = "";
-  chemistryMark.value = "";
-  mathMark.value = "";
-  urduMark.value = "";
-  csMark.value = "";
-  biologyMark.value = "";
