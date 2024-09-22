@@ -9,7 +9,7 @@
 <!-- bootstrap css -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- main style css -->
-<link rel="stylesheet" href="./style/index.css">
+<link rel="stylesheet" href="style/index.css">
 
 <body>
     <div class="root">
@@ -95,7 +95,10 @@
                                     placeholder="Enter Biology marks">
                             </div>
                             <span id="bottomStepError"></span> <br /> <br />
-                            <button class="btn btn-success generateBtn" onclick="submitForm()">Generate</button>
+                            <a href="#marksheet_main_contain">
+                                <button class="btn btn-success generateBtn" onclick="submitForm()"
+                                    id="generator">Generate</button>
+                            </a>
                         </div>
                     </div>
                     <!-- </form> -->
@@ -103,13 +106,13 @@
 
             </div>
             <!-- marksheet -->
-            <div class="marksheetContaienr" id="markContainer"></div>
+            <div class="marksheetContaienr" id="markContainer">
+                <!-- dode rendor using DOM -->
+            </div>
         </div>
     </div>
-    <!-- <h1>Hello World</h1>
-    <h1>Hello</h1> -->
     <!-- main js -->
-    <script src="/js/index.js"></script>
+    <script src="js/index.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
