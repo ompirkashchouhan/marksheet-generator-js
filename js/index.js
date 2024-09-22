@@ -26,7 +26,7 @@ function limitInputLengthAndValue(inputField) {
   inputField.addEventListener('input', function () {
     // Limit input length to 5 digits
     if (inputField.value.length > 5) {
-      inputField.value = inputField.value.slice(0, 5);
+      inputField.value = inputField.value.slice(0, 3);
     }
 
     // Restrict value to a maximum of 100
@@ -50,6 +50,13 @@ limitInputLengthAndValue(biologyMark);
 // Error Messages
 var stepFirstError = document.getElementById("topStepError");
 var stepSecondError = document.getElementById("bottomStepError");
+
+  seatNumber.addEventListener('change',function (){
+    if(seatNumber.value.length === 5){
+      seatNumber.value = ""
+      console.log(seatNumber)
+    }
+  })
 
 // Function OnClick Submit
 
@@ -137,49 +144,49 @@ function submitForm() {
         obtentMarks: englishMark.value,
         totalMarks: 100,
         minMarks: 33,
-        percentage: (Number(englishMark.value) / 100) * 100 + "%",
+        percentage: (Number(englishMark.value).toFixed(0) / 100) * 100 + "%",
       },
       {
         names: "Physics",
         obtentMarks: physicsMark.value,
         totalMarks: 100,
         minMarks: 33,
-        percentage: (Number(physicsMark.value) / 100) * 100 + "%",
+        percentage: (Number(physicsMark.value).toFixed(0) / 100) * 100 + "%",
       },
       {
         names: "Chemistry",
         obtentMarks: chemistryMark.value,
         totalMarks: 100,
         minMarks: 33,
-        percentage: (Number(chemistryMark.value) / 100) * 100 + "%",
+        percentage: (Number(chemistryMark.value).toFixed(0) / 100) * 100 + "%",
       },
       {
         names: "Math",
         obtentMarks: mathMark.value,
         totalMarks: 100,
         minMarks: 33,
-        percentage: (Number(mathMark.value) / 100) * 100 + "%",
+        percentage: (Number(mathMark.value).toFixed(0) / 100) * 100 + "%",
       },
       {
         names: "Urdu",
         obtentMarks: urduMark.value,
         totalMarks: 100,
         minMarks: 33,
-        percentage: (Number(urduMark.value) / 100) * 100 + "%",
+        percentage: (Number(urduMark.value).toFixed(0) / 100) * 100 + "%",
       },
       {
         names: "Computer Science",
         obtentMarks: csMark.value,
         totalMarks: 100,
         minMarks: 33,
-        percentage: (Number(csMark.value) / 100) * 100 + "%",
+        percentage: (Number(csMark.value).toFixed(0) / 100) * 100 + "%",
       },
       {
         names: "Biology",
         obtentMarks: biologyMark.value,
         totalMarks: 100,
         minMarks: 33,
-        percentage: (Number(biologyMark.value) / 100) * 100 + "%",
+        percentage: (Number(biologyMark.value).toFixed(0) / 100) * 100 + "%",
       },
       {
         names: "Total",
@@ -193,7 +200,18 @@ function submitForm() {
           Number(biologyMark.value),
         totalMarks: 700,
         minMarks: 231,
-        percentage: ((Number(englishMark.value) + Number(physicsMark.value) + Number(chemistryMark.value) + Number(mathMark.value) + Number(urduMark.value) + Number(csMark.value) + Number(biologyMark.value)) / (700) * (100)).toFixed(0) + "%",
+        percentage:
+          (
+            ((Number(englishMark.value) +
+              Number(physicsMark.value) +
+              Number(chemistryMark.value) +
+              Number(mathMark.value) +
+              Number(urduMark.value) +
+              Number(csMark.value) +
+              Number(biologyMark.value)) /
+              700) *
+            100
+          ).toFixed(0) + "%",
       },
     ];
 
@@ -386,10 +404,11 @@ function submitForm() {
     gradingDiv.className = 'grading';
 
     // Grading Scale Text
-    var captionGradeText = document.createElement('div');
-    captionGradeText.className = 'caption_grade_text';
-    var gradingScaleH3 = document.createElement('h3');
-    gradingScaleH3.innerText = 'Grading Scale: A = 90% to 100% B = 80%-89% C = 60%-79% D = 0%-59%';
+    var captionGradeText = document.createElement("div");
+    captionGradeText.className = "caption_grade_text";
+    var gradingScaleH3 = document.createElement("h3");
+    gradingScaleH3.innerText =
+      "Grading Scale: A-1 = 90% to 100% A = 80%-89% B = 60%-79% C = 33%-59%";
     captionGradeText.appendChild(gradingScaleH3);
 
     // Your Grade
@@ -411,13 +430,15 @@ function submitForm() {
     // Append the whole marksheet to the document body or a specific container
     document.getElementById('markContainer').appendChild(marksheet);
 
-    var storedDataInp = [{
-      nam: nameInp.value,
-      fNam: fName.value,
-      surNam: surname.value,
-      groupNam: group.value,
-      seatNam: seatNumber.value
-    }]
+    var storedDataInp = [
+      {
+        nam: nameInp.value,
+        fNam: fName.value,
+        surNam: surname.value,
+        groupNam: group.value,
+        seatNam: seatNumber.value,
+      },
+    ];
 
     for (var i = 0; i < storedDataInp.length; i++) {
       getNameSpan.innerHTML = storedDataInp[i].nam
@@ -430,7 +451,7 @@ function submitForm() {
     var totalPercentage = Number(subjects[7].percentage.slice(0, 2))
 
     if (totalPercentage >= 90 && totalPercentage <= 100) {
-      gradeSpan.innerHTML = "Congratulation's you have a got (A-1) Grade ."
+      gradeSpan.innerHTML = "Congratulation's you have a got (A-1) Grade .";
     } else if (totalPercentage >= 80 && totalPercentage <= 89) {
       gradeSpan.innerHTML = "Congratulation's you have a got (A) Grade ."
     } else if (totalPercentage >= 60 && totalPercentage <= 79) {
@@ -438,11 +459,24 @@ function submitForm() {
     } else if (totalPercentage >= 33 && totalPercentage <= 59) {
       gradeSpan.innerHTML = "You have a got (C) Grade ."
     } else if (totalPercentage > 0 && totalPercentage <= 33) {
-      gradeSpan.innerHTML = "Fail ."
+      gradeSpan.innerHTML = "Fail .";
     }
 
 
     // >>>>>>>>>>>>>>>>>>>>>>... end Marksheet 
 
   }
+
+  // nameInp.value = "";
+  // fName.value = "";
+  // surname.value = "";
+  // group.value = "";
+  // seatNumber.value = "";
+  // englishMark.value = "";
+  // physicsMark.value = "";
+  // chemistryMark.value = "";
+  // mathMark.value = "";
+  // urduMark.value = "";
+  // csMark.value = "";
+  // biologyMark.value = "";
 }
