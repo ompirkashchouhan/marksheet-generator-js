@@ -15,7 +15,7 @@ var csMark = document.getElementById("computerScience");
 var biologyMark = document.getElementById("Biology");
 
 // Restrict the seat number input to a maximum of 5 digits
-seatNumber.addEventListener('input', function () {
+seatNumber.addEventListener("input", function () {
   if (seatNumber.value.length > 5) {
     seatNumber.value = seatNumber.value.slice(0, 5);
   }
@@ -23,7 +23,7 @@ seatNumber.addEventListener('input', function () {
 
 // Function to limit input length and value to 100
 function limitInputLengthAndValue(inputField) {
-  inputField.addEventListener('input', function () {
+  inputField.addEventListener("input", function () {
     if (inputField.value.length > 3) {
       inputField.value = inputField.value.slice(0, 3);
     }
@@ -106,49 +106,49 @@ function submitForm() {
       obtentMarks: Number(englishMark.value),
       totalMarks: 100,
       minMarks: 33,
-      percentage: ((Number(englishMark.value) / 100) * 100).toFixed(2) + "%",
+      percentage: ((Number(englishMark.value) / 100) * 100).toFixed(0) + "%",
     },
     {
       names: "Physics",
       obtentMarks: Number(physicsMark.value),
       totalMarks: 100,
       minMarks: 33,
-      percentage: ((Number(physicsMark.value) / 100) * 100).toFixed(2) + "%",
+      percentage: ((Number(physicsMark.value) / 100) * 100).toFixed(0) + "%",
     },
     {
       names: "Chemistry",
       obtentMarks: Number(chemistryMark.value),
       totalMarks: 100,
       minMarks: 33,
-      percentage: ((Number(chemistryMark.value) / 100) * 100).toFixed(2) + "%",
+      percentage: ((Number(chemistryMark.value) / 100) * 100).toFixed(0) + "%",
     },
     {
       names: "Math",
       obtentMarks: Number(mathMark.value),
       totalMarks: 100,
       minMarks: 33,
-      percentage: ((Number(mathMark.value) / 100) * 100).toFixed(2) + "%",
+      percentage: ((Number(mathMark.value) / 100) * 100).toFixed(0) + "%",
     },
     {
       names: "Urdu",
       obtentMarks: Number(urduMark.value),
       totalMarks: 100,
       minMarks: 33,
-      percentage: ((Number(urduMark.value) / 100) * 100).toFixed(2) + "%",
+      percentage: ((Number(urduMark.value) / 100) * 100).toFixed(0) + "%",
     },
     {
       names: "Computer Science",
       obtentMarks: Number(csMark.value),
       totalMarks: 100,
       minMarks: 33,
-      percentage: ((Number(csMark.value) / 100) * 100).toFixed(2) + "%",
+      percentage: ((Number(csMark.value) / 100) * 100).toFixed(0) + "%",
     },
     {
       names: "Biology",
       obtentMarks: Number(biologyMark.value),
       totalMarks: 100,
       minMarks: 33,
-      percentage: ((Number(biologyMark.value) / 100) * 100).toFixed(2) + "%",
+      percentage: ((Number(biologyMark.value) / 100) * 100).toFixed(0) + "%",
     },
     {
       names: "Total",
@@ -164,23 +164,23 @@ function submitForm() {
       minMarks: 231,
       percentage:
         (
-          (
-            (Number(englishMark.value) +
-              Number(physicsMark.value) +
-              Number(chemistryMark.value) +
-              Number(mathMark.value) +
-              Number(urduMark.value) +
-              Number(csMark.value) +
-              Number(biologyMark.value)) / 700
-          ) * 100
-        ).toFixed(2) + "%",
+          ((Number(englishMark.value) +
+            Number(physicsMark.value) +
+            Number(chemistryMark.value) +
+            Number(mathMark.value) +
+            Number(urduMark.value) +
+            Number(csMark.value) +
+            Number(biologyMark.value)) /
+            700) *
+          100
+        ).toFixed(0) + "%",
     },
   ];
 
   // >>>>>>>>>>>>>>>>>>>>>>... start Marksheet Generation
   var marksheet = document.createElement("div");
   marksheet.className = "marksheet";
-  marksheet.id = 'marksheet_main_contain'
+  marksheet.id = "marksheet_main_contain";
 
   var caption = document.createElement("div");
   caption.className = "caption";
@@ -188,7 +188,7 @@ function submitForm() {
   var logoDiv = document.createElement("div");
   logoDiv.className = "logo";
   var logoImg = document.createElement("img");
-  logoImg.src = "./assets/image/logo.png";
+  logoImg.src = "./assets/image/logo-code-netic-removebg.png";
   logoImg.width = 170;
   logoImg.alt = "image";
   logoDiv.appendChild(logoImg);
@@ -217,7 +217,7 @@ function submitForm() {
   var studentName = document.createElement("div");
   studentName.className = "student_name flex-row";
   var studentNameH3 = document.createElement("h3");
-  studentNameH3.innerText = "Name:";
+  studentNameH3.innerText = "Name :";
   var getNameSpan = document.createElement("span");
   getNameSpan.id = "getName";
   getNameSpan.innerText = nameInp.value;
@@ -227,7 +227,7 @@ function submitForm() {
   var studentFName = document.createElement("div");
   studentFName.className = "student_fName flex-row";
   var studentFNameH3 = document.createElement("h3");
-  studentFNameH3.innerText = "Father Name:";
+  studentFNameH3.innerText = "Father Name :";
   var getfNameSpan = document.createElement("span");
   getfNameSpan.id = "getfName";
   getfNameSpan.innerText = fName.value;
@@ -237,7 +237,7 @@ function submitForm() {
   var studentSurname = document.createElement("div");
   studentSurname.className = "student_surname";
   var studentSurnameH3 = document.createElement("h3");
-  studentSurnameH3.innerText = "Surname:";
+  studentSurnameH3.innerText = "Surname :";
   var surNameSpan = document.createElement("span");
   surNameSpan.id = "surName";
   surNameSpan.innerText = surname.value;
@@ -254,7 +254,7 @@ function submitForm() {
   var studentGroup = document.createElement("div");
   studentGroup.className = "student_group";
   var studentGroupH3 = document.createElement("h3");
-  studentGroupH3.innerText = "Group:";
+  studentGroupH3.innerText = "Group :";
   var groupSpan = document.createElement("span");
   groupSpan.id = "Group";
   groupSpan.innerText = group.value;
@@ -264,7 +264,7 @@ function submitForm() {
   var studentSeatNum = document.createElement("div");
   studentSeatNum.className = "student_seatnum";
   var studentSeatNumH3 = document.createElement("h3");
-  studentSeatNumH3.innerText = "Seat No:";
+  studentSeatNumH3.innerText = "Seat No :";
   var seatNumSpan = document.createElement("span");
   seatNumSpan.id = "seatNum";
   seatNumSpan.innerText = seatNumber.value;
@@ -361,7 +361,7 @@ function submitForm() {
   marksheet.appendChild(gradingDiv);
 
   // Append the whole marksheet to the document body or a specific container
-  document.getElementById('markContainer').appendChild(marksheet);
+  document.getElementById("markContainer").appendChild(marksheet);
 
   var totalPercentage = Number(subjects[7].percentage.slice(0, -1));
 
@@ -377,5 +377,17 @@ function submitForm() {
     gradeSpan.innerHTML = "Fail.";
   }
 
+  nameInp.value = "";
+  fName.value = "";
+  surname.value = "";
+  group.value = "";
+  seatNumber.value = "";
+  englishMark.value = "";
+  physicsMark.value = "";
+  chemistryMark.value = "";
+  mathMark.value = "";
+  urduMark.value = "";
+  csMark.value = "";
+  biologyMark.value = "";
 }
 // end program

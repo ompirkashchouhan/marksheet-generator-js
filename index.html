@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marksheet - Generator</title>
+    <link rel="shortcut icon" href="./assets/image/logo-code-netic-removebg-fav.png" type="image/x-icon">
 </head>
 <!-- bootstrap css -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +19,7 @@
             <!-- heading -->
             <div class="headingMain" align="center">
                 <h1 class="heading"> Marksheet Generator</h1>
-                <img src="./assets/image/logo.png" class="logoForm" />
+                <img src="./assets/image/logo-code-netic.jpg" class="logoForm" />
             </div>
             <!-- form -->
             <div class="form">
@@ -29,28 +30,28 @@
                         <h4>Step 1: Personal Information</h4>
                         <div class="mb32">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
+                                <label for="name" class="form-label">Name :</label>
                                 <input type="text" class="form-control" id="name" placeholder="Enter your name">
                             </div>
                             <div class="mb-3">
-                                <label for="fatherName" class="form-label">Father's NameS</label>
+                                <label for="fatherName" class="form-label">Father's Name :</label>
                                 <input type="text" class="form-control" id="fatherName"
                                     placeholder="Enter your father's name">
                             </div>
                             <div class="mb-3">
-                                <label for="surname1" class="form-label">Surname</label>
+                                <label for="surname1" class="form-label">Surname :</label>
                                 <input type="text" class="form-control" id="surname1" placeholder="Enter your surname">
                             </div>
                             <div class="mb-3">
-                                <label for="group" class="form-label">Group</label>
-                                <!-- <input type="text" class="form-control" id="group" placeholder="Enter your group"> -->
+                                <label for="group" class="form-label">Group :</label>
                                 <select name="Group" id="group" class="form-select" aria-label="Default select example">
-                                    <option value="science">Science</option>
-                                    <option value="engineering">Engineering</option>
+                                    <option value="science">Pre-Medical</option>
+                                    <option value="engineering" selected>Pre-Engineering</option>
+                                    <option value="computer science">Computer Science</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="seatNumber" class="form-label">Seat Number</label>
+                                <label for="seatNumber" class="form-label">Seat Number :</label>
                                 <input type="number" class="form-control" id="seatNumber"
                                     placeholder="Enter your seat number">
                             </div>
@@ -62,39 +63,39 @@
                         <h4>Step 2: Subjects</h4>
                         <div class="m23">
                             <div class="mb-3">
-                                <label for="english" class="form-label">English</label>
+                                <label for="english" class="form-label">English :</label>
                                 <input type="number" class="form-control" id="english"
                                     placeholder="Enter English marks">
                             </div>
                             <div class="mb-3">
-                                <label for="physics" class="form-label">Physics</label>
+                                <label for="physics" class="form-label">Physics :</label>
                                 <input type="number" class="form-control" id="physics"
                                     placeholder="Enter Physics marks">
                             </div>
                             <div class="mb-3">
-                                <label for="chemistry" class="form-label">Chemistry</label>
+                                <label for="chemistry" class="form-label">Chemistry :</label>
                                 <input type="number" class="form-control" id="chemistry"
                                     placeholder="Enter Chemistry marks">
                             </div>
                             <div class="mb-3">
-                                <label for="math" class="form-label">Math</label>
+                                <label for="math" class="form-label">Math :</label>
                                 <input type="number" class="form-control" id="math" placeholder="Enter Math marks">
                             </div>
                             <div class="mb-3">
-                                <label for="urdu" class="form-label">Urdu</label>
+                                <label for="urdu" class="form-label">Urdu :</label>
                                 <input type="number" class="form-control" id="urdu" placeholder="Enter Urdu marks">
                             </div>
                             <div class="mb-3">
-                                <label for="computerScience" class="form-label">Computer Science</label>
+                                <label for="computerScience" class="form-label">Computer Science :</label>
                                 <input type="number" class="form-control" id="computerScience"
                                     placeholder="Enter Computer Science marks">
                             </div>
                             <div class="mb-3">
-                                <label for="urduBiology" class="form-label">Biology</label>
+                                <label for="urduBiology" class="form-label">Biology :</label>
                                 <input type="number" class="form-control" id="Biology"
                                     placeholder="Enter Biology marks">
                             </div>
-                            <span id="bottomStepError"></span> <br /> <br />
+                            <span id="bottomStepError"></span><br /> <br />
                             <a href="#marksheet_main_contain">
                                 <button class="btn btn-success generateBtn" onclick="submitForm()"
                                     id="generator">Generate</button>
